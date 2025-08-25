@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - alexle135.de</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <h1 class="text-3xl font-bold text-gray-900">Admin Panel</h1>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-600">Willkommen, Admin</span>
+                        <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+                            Abmelden
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900">Seitenaufrufe</h3>
+                    <p class="text-3xl font-bold text-blue-600" id="pageViews">0</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900">Projekte</h3>
+                    <p class="text-3xl font-bold text-green-600" id="projectCount">6</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900">Letztes Update</h3>
+                    <p class="text-sm text-gray-600" id="lastUpdate">Lade...</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900">SSL Status</h3>
+                    <p class="text-sm text-green-600" id="sslStatus">Aktiv</p>
+                </div>
+            </div>
+
+            <!-- Content Management -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Hero Section Editor -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Hero Section</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Überschrift</label>
+                            <input type="text" id="heroTitle" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Untertitel</label>
+                            <textarea id="heroSubtitle" rows="3" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">CTA Button Text</label>
+                            <input type="text" id="heroCTA" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <button onclick="saveHeroSection()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Speichern</button>
+                    </div>
+                </div>
+
+                <!-- About Section Editor -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Über mich</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Titel</label>
+                            <input type="text" id="aboutTitle" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Beschreibung</label>
+                            <textarea id="aboutDescription" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                        </div>
+                        <button onclick="saveAboutSection()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Speichern</button>
+                    </div>
+                </div>
+
+                <!-- Projects Management -->
+                <div class="bg-white rounded-lg shadow p-6 lg:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4">Projekte verwalten</h2>
+                    <div class="mb-4">
+                        <button onclick="addProject()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Neues Projekt</button>
+                    </div>
+                    <div id="projectsList" class="space-y-4">
+                        <!-- Projects will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Bilder hochladen</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Bild auswählen</label>
+                            <input type="file" id="imageUpload" accept="image/*" class="mt-1 block w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Zielordner</label>
+                            <select id="imageFolder" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                                <option value="images">images/</option>
+                                <option value="images/projects">images/projects/</option>
+                                <option value="images/hero">images/hero/</option>
+                            </select>
+                        </div>
+                        <button onclick="uploadImage()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Hochladen</button>
+                        <div id="uploadStatus"></div>
+                    </div>
+                </div>
+
+                <!-- Weekly Schedule Upload -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Stundenplan hochladen</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">PDF Datei</label>
+                            <input type="file" id="scheduleUpload" accept=".pdf" class="mt-1 block w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Woche</label>
+                            <input type="week" id="scheduleWeek" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <button onclick="uploadSchedule()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Hochladen</button>
+                        <div id="scheduleStatus"></div>
+                    </div>
+                </div>
+
+                <!-- Legal Pages Editor -->
+                <div class="bg-white rounded-lg shadow p-6 lg:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4">Rechtliche Seiten bearbeiten</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="text-lg font-medium mb-2">Impressum</h3>
+                            <textarea id="impressumContent" rows="10" class="w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                            <button onclick="saveImpressum()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Speichern</button>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium mb-2">Datenschutz</h3>
+                            <textarea id="datenschutzContent" rows="10" class="w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                            <button onclick="saveDatenschutz()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Speichern</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

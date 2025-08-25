@@ -1,0 +1,74 @@
+{
+  "personalInfo": {
+    "name": "Alex Le",
+    "title": "Full-Stack Developer",
+    "email": "kontakt@alexle135.de",
+    "phone": "+49 123 456789",
+    "address": {
+      "street": "Musterstraße 123",
+      "city": "12345 Berlin",
+      "country": "Germany"
+    },
+    "social": {
+      "github": "https://github.com/arn0ld87",
+      "linkedin": "https://linkedin.com/in/alexle",
+      "twitter": "https://twitter.com/alexle"
+    }
+  },
+  "impressum": {
+    "company": "Alex Le Digital Solutions",
+    "address": "Musterstraße 123, 12345 Berlin",
+    "contact": {
+      "email": "kontakt@alexle135.de",
+      "phone": "+49 123 456789"
+    },
+    "legal": {
+      "ustId": "DE123456789",
+      "taxNumber": "123/456/78901"
+    }
+  },
+  "datenschutz": {
+    "lastUpdated": "2024-08-23",
+    "version": "1.0",
+    "contactEmail": "kontakt@alexle135.de"
+  },
+  "hero": {
+    "title": "Full-Stack Developer",
+    "subtitle": "Creating Digital Experiences with Modern Technologies",
+    "description": "Ich entwickle moderne Webanwendungen mit React, TypeScript und Cloud-Technologien. Mein Fokus liegt auf skalierbaren Lösungen und hervorragender User Experience."
+  },
+  "about": {
+    "title": "Über mich",
+    "content": "Als leidenschaftlicher Full-Stack Developer mit über 5 Jahren Erfahrung entwickle ich innovative Webanwendungen. Mein Schwerpunkt liegt auf moderner Frontend-Technologie mit React und TypeScript, kombiniert mit robuster Backend-Entwicklung."
+  },
+  "skills": [
+    { "name": "React", "level": 95, "category": "Frontend" },
+    { "name": "TypeScript", "level": 90, "category": "Frontend" },
+    { "name": "Node.js", "level": 85, "category": "Backend" },
+    { "name": "Python", "level": 80, "category": "Backend" },
+    { "name": "PostgreSQL", "level": 75, "category": "Database" },
+    { "name": "AWS", "level": 70, "category": "Cloud" }
+  ],
+  "projects": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "description": "Moderne E-Commerce-Plattform mit React, TypeScript und Stripe-Integration",
+      "technologies": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      "image": "/images/ecommerce.jpg",
+      "github": "https://github.com/arn0ld87/ecommerce-platform",
+      "live": "https://shop.alexle135.de",
+      "featured": true
+    },
+    {
+      "id": "portfolio-website",
+      "title": "Portfolio Website",
+      "description": "Moderne Portfolio-Website mit React und Tailwind CSS",
+      "technologies": ["React", "TypeScript", "Tailwind CSS"],
+      "image": "/images/portfolio.jpg",
+      "github": "https://github.com/arn0ld87/portfolio",
+      "live": "https://alexle135.de",
+      "featured": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "react-typescript",
+  "description": "React component development and TypeScript patterns specialist",
+  "focus": "Functional components, hooks, state management, props interfaces",
+  "capabilities": [
+    "create-react-component",
+    "add-typescript-types",
+    "implement-hooks",
+    "refactor-to-typescript",
+    "component-optimization"
+  ],
+  "patterns": [
+    "functional-components",
+    "hooks-pattern",
+    "props-interfaces",
+    "type-safety",
+    "component-composition"
+  ],
+  "preferences": {
+    "testing": "vitest",
+    "styling": "tailwind-css",
+    "state": "react-hooks",
+    "build": "vite"
+  },
+  "examples": [
+    "Create a new project card component with TypeScript",
+    "Add proper TypeScript interfaces for component props",
+    "Implement custom hooks for state management",
+    "Refactor JavaScript components to TypeScript"
+  ]
+}

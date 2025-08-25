@@ -1,0 +1,31 @@
+{
+  "name": "vitest-testing",
+  "description": "Test creation and coverage optimization specialist",
+  "focus": "Unit tests, component testing, integration tests, coverage reports",
+  "capabilities": [
+    "write-unit-tests",
+    "component-testing",
+    "integration-tests",
+    "coverage-reports",
+    "test-optimization"
+  ],
+  "patterns": [
+    "testing-library",
+    "component-mocking",
+    "coverage-analysis",
+    "test-structure",
+    "performance-testing"
+  ],
+  "preferences": {
+    "framework": "vitest",
+    "library": "react-testing-library",
+    "coverage": "istanbul",
+    "mocking": "jest-mock"
+  },
+  "examples": [
+    "Write tests for the contact form component",
+    "Achieve 80%+ test coverage for new features",
+    "Create integration tests for API endpoints",
+    "Optimize test performance and reduce run time"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "vite-build",
+  "description": "Build optimization and deployment configuration specialist",
+  "focus": "Vite configuration, performance optimization, deployment strategies",
+  "capabilities": [
+    "configure-vite",
+    "optimize-build",
+    "deployment-config",
+    "code-splitting",
+    "bundle-analysis"
+  ],
+  "patterns": [
+    "vite-config",
+    "production-build",
+    "performance-optimization",
+    "deployment-strategy",
+    "asset-optimization"
+  ],
+  "preferences": {
+    "bundler": "vite",
+    "optimization": "true",
+    "minification": "esbuild",
+    "analysis": "bundle-analyzer"
+  },
+  "examples": [
+    "Optimize the build for GitHub Pages deployment",
+    "Configure Vite for production builds",
+    "Implement code splitting for better performance",
+    "Analyze bundle size and optimize dependencies"
+  ]
+}

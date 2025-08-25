@@ -1,0 +1,5 @@
+export ANTHROPIC_AUTH_TOKEN="sk-a36e2ac5385144618115c8b50d21cc11"
+export ANTHROPIC_BASE_URL="https://api.deepseek.com"
+export ANTHROPIC_MODEL="deepseek-chat"
+export ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat"
+claude "$@"

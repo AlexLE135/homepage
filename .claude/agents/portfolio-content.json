@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-content",
+  "description": "Content management and SEO optimization specialist",
+  "focus": "Project data structure, SEO meta tags, personal branding content",
+  "capabilities": [
+    "content-structure",
+    "seo-optimization",
+    "data-modeling",
+    "image-optimization",
+    "branding-content"
+  ],
+  "patterns": [
+    "json-structure",
+    "meta-tags",
+    "structured-data",
+    "content-guidelines",
+    "seo-best-practices"
+  ],
+  "preferences": {
+    "format": "json",
+    "seo": "comprehensive",
+    "images": "webp-optimized",
+    "structure": "consistent"
+  },
+  "examples": [
+    "Add a new project with SEO-optimized content",
+    "Generate sitemap and meta tags for better SEO",
+    "Optimize images for web performance",
+    "Create structured data for search engines"
+  ]
+}
